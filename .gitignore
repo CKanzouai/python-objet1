@@ -1,0 +1,5 @@
+# Ignorer le répertoire venv
+venv/
+
+# Ignorer le répertoire .idea
+.idea/
