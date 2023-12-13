@@ -11,7 +11,7 @@ attributs.
 from AdressePostale import AdressePostale
 
 class Personne:
-    def __init__(self, nom, prenom, adresse_postale):
+    def __init__(self, nom, prenom, adresse_postale=None):
         self.nom = nom
         self.prenom = prenom
         self.adresse_postale = adresse_postale
@@ -33,6 +33,7 @@ class Personne:
 
     def set_adresse_postale(self, adresse_postale):
         self.adresse_postale = adresse_postale
+
 
     def maj(self):
         return f"{self.nom.upper()} {self.prenom.upper()}"
@@ -57,18 +58,7 @@ print(p1.get_nom(), p1.get_prenom())
 print(p1.maj())
 print(p1.nom, p1.prenom, p1.get_adresse_postale())
 print(p2.nom, p2.prenom, p2.get_adresse_postale())
-
-class TestPersonne:
-
-    def __init__(self, nom, prenom):
-        self.nom = nom
-        self.prenom = prenom
-        self.adresse_postale = None
-
-    def set_adresse_postale(self, adresse_postale):
-        self.adresse_postale = adresse_postale
-
-p3 = TestPersonne("ouadie", "boukanzia")
+p3 = Personne("ouadie", "boukanzia")
 adr3 = AdressePostale(56, "rue de paris", "69000", "Lyon")
 p3.set_adresse_postale(adr3)
 print(p3.adresse_postale)
