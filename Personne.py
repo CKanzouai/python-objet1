@@ -40,12 +40,16 @@ class Personne:
     def __str__(self):
        return f"{self.nom} {self.prenom}, {str(self.adresse_postale)}"
 
+    def __repr__(self):
+        return f"Personne(nom='{self.nom}', prenom='{self.prenom}', adresse={self.adresse_postale})"
 
 
 adr = AdressePostale(1, "avenue de paris", "71100", "Chalon")
 adr1 = AdressePostale(23, "rue de dijon", "21000", "Dijon")
 p1 = Personne("ahmed", "kanzouai",adr)
 p2 = Personne("ouadie", "boukanzia", adr1)
+liste=[p1,p2]
+print(liste)
 p1.set_nom("dlia")
 p1.set_prenom("asmae")
 print(p1.get_nom(), p1.get_prenom())
