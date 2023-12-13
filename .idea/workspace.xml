@@ -101,7 +101,7 @@
       <option name="presentableId" value="Default" />
       <updated>1702413674248</updated>
       <workItem from="1702413684556" duration="5610000" />
-      <workItem from="1702458174784" duration="9632000" />
+      <workItem from="1702458174784" duration="14202000" />
     </task>
     <servers />
   </component>
@@ -125,7 +125,7 @@
     <SUITE FILE_PATH="coverage/python_objet1$tp4methode_static.coverage" NAME="tp4–methode static Coverage Results" MODIFIED="1702418929159" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/python_objet1$Zoo.coverage" NAME="Zoo Coverage Results" MODIFIED="1702417260507" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/python_objet1$Personne.coverage" NAME="Personne Coverage Results" MODIFIED="1702458583902" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/python_objet1$encapsulation.coverage" NAME="encapsulation Coverage Results" MODIFIED="1702474851187" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/python_objet1$encapsulation.coverage" NAME="encapsulation Coverage Results" MODIFIED="1702484310243" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/python_objet1$main.coverage" NAME="main Coverage Results" MODIFIED="1702458576323" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
