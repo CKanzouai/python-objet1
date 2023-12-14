@@ -1,7 +1,7 @@
 from abc import ABC, abstractmethod
 
 
-class Livre:
+class Livre(ABC):
     def __init__(self, titre, auteur, achetable=False):
         self.__titre = titre
         self.__auteur = auteur
@@ -9,6 +9,10 @@ class Livre:
 
     def afficher_infos(self):
         print("le titre : ", self.__titre, ", l'auteur : ", self.__auteur, ", est achetable : ", self.__achetable)
+
+    @abstractmethod
+    def get_tjm(self):
+        pass
 
     @property
     def titre(self):
@@ -48,6 +52,8 @@ print(livre.titre, livre.auteur, livre.achetable)"""
 
 
 class LivrePapier(Livre):
+
+
     def __init__(self, titre, auteur, etat, achetable):
         super().__init__(titre, auteur, achetable)
         self.__etat = etat
@@ -55,6 +61,9 @@ class LivrePapier(Livre):
     def afficher_infos(self):
         super().afficher_infos()
         print(", etat:", self.__etat)
+
+    def get_tjm(self):
+        return 0.5
 
 
 class LivreNumerique(Livre):
@@ -65,6 +74,9 @@ class LivreNumerique(Livre):
     def afficher_infos(self):
         super().afficher_infos()
         print(", format:", self.__format)
+
+    def get_tjm(self):
+        return 0.25
 
 
 livre = LivreNumerique("titre1", "auteur1", "pdf", True)
@@ -109,13 +121,8 @@ class Emprunt(Sortie):
         self.__duree = __duree
 
     def get_montant(self):
-        montant = 0
-        if isinstance(self.livre, LivreNumerique):
-            montant = self.__duree * 0.25
-        elif isinstance(self.livre, LivrePapier):
-            montant = self.__duree * 0.5
-        return montant
 
+        return self.__duree*self.livre.get_tjm()
 
 class Achat(Sortie):
     def __init__(self, __montant, date, livre):
@@ -133,11 +140,22 @@ def montant_global(liste):
     return montant_global
 
 
+def montant_par_type(sorties):
+    montants = {"Achat": 0, "Emprunt": 0}
+    for sortie in sorties:
+        if isinstance(sortie, Achat):
+            montants["Achat"] += sortie.get_montant()
+        elif isinstance(sortie, Emprunt):
+            montants["Emprunt"] += sortie.get_montant()
+    return montants
+
+
 emprunt = Emprunt(2, "09/03/2022", livre2)
 emprunt2 = Emprunt(6, "25/04/2023", livre3)
 achat = Achat(50, "02/05/2022", livre)
 achat2 = Achat(39, "06/12/2022", livre4)
 liste2 = [emprunt, emprunt2, achat, achat2]
-print(montant_global(liste2))
-print(emprunt.get_montant(),"et ",  emprunt2.get_montant())
-print(achat.get_montant(),"et", achat2.get_montant())
+print(f"montant globale: {montant_global(liste2)}")
+print(f"Montant par type: {montant_par_type(liste2)}")
+print(emprunt.get_montant(), "et ", emprunt2.get_montant())
+print(achat.get_montant(), "et", achat2.get_montant())
