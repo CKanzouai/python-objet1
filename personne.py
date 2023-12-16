@@ -1,7 +1,17 @@
+"""attributs.
+3) créer la classe Personne représentant une personne.
+a. Cette classe a 3 attributs :
+i. le nom
+ii. le prénom
+iii. une adresse postale (de type AdressePostale)
+4) Créer 2 instances de la classe Personne en renseignant la valeur de tous les
+attributs.
+5) Affichez les 2 instances avec la fonction print. Que constatez-vous ?"""
+
 from adresse_postale import AdressePostale
 
 class Personne:
-    def __init__(self, nom, prenom, adresse_postale):
+    def __init__(self, nom, prenom, adresse_postale=None):
         self.nom = nom
         self.prenom = prenom
         self.adresse_postale = adresse_postale
@@ -24,6 +34,7 @@ class Personne:
     def set_adresse_postale(self, adresse_postale):
         self.adresse_postale = adresse_postale
 
+
     def maj(self):
         return f"{self.nom.upper()} {self.prenom.upper()}"
 
@@ -33,15 +44,22 @@ class Personne:
     def __repr__(self):
         return f"Personne(nom='{self.nom}', prenom='{self.prenom}', adresse={self.adresse_postale})"
 
-    def __eq__(self, __value):
-        if not isinstance(__value, Personne):
-            return False
-        return self.nom == __value.nom and self.prenom == __value.prenom
-
 
 adr = AdressePostale(1, "avenue de paris", "71100", "Chalon")
 adr1 = AdressePostale(23, "rue de dijon", "21000", "Dijon")
 p1 = Personne("ahmed", "kanzouai",adr)
-p2 = Personne("ahmed", "kanzouai", adr1)
+p2 = Personne("ouadie", "boukanzia", adr1)
+liste=[p1,p2]
+print(liste)
+p1.set_nom("dlia")
+p1.set_prenom("asmae")
+print(p1.get_nom(), p1.get_prenom())
 
-print(p1 == p2)
+print(p1.maj())
+print(p1.nom, p1.prenom, p1.get_adresse_postale())
+print(p2.nom, p2.prenom, p2.get_adresse_postale())
+p3 = Personne("ouadie", "boukanzia")
+adr3 = AdressePostale(56, "rue de paris", "69000", "Lyon")
+p3.set_adresse_postale(adr3)
+print(p3.adresse_postale)
+
